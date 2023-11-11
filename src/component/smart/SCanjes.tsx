@@ -2,14 +2,14 @@ import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useFetch from "../../hook/useFetch";
-import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
+import useEnviarSolicitud, { METODO } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import { useInformacionContext } from "./SInformacion";
 import SCarga from "./SCarga";
 import DCanje from "../dumb/DCanje";
 import { SERVER_PATH_ACTUALIZAR, SERVER_PATH_CANJES } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
-import { Canje, RespuestaServer } from "../../auxiliar/type";
+import { Canje, RespuestaServer, Usuario } from "../../auxiliar/type";
 
 
 interface CanjeElement extends Canje {
@@ -21,6 +21,7 @@ interface CanjeElement extends Canje {
 
 function SCanjes(): JSX.Element {
     const navigate = useNavigate();
+    const enviador = useEnviarSolicitud<Usuario, RespuestaServer<undefined>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
     const { data, isLoading, isValidating } = useFetch<RespuestaServer<Canje[]>>(SERVER_PATH_CANJES, true);
     const { usuario, agregarInfoUsuario } = useInformacionContext();
 
@@ -32,7 +33,7 @@ function SCanjes(): JSX.Element {
             canjeTitulo: canje.titulo,
             canjeRestantes: canje.restantes,
         }
-        await useEnviarSolicitud(data, SERVER_PATH_ACTUALIZAR, METODO.PUT);
+        await enviador.trigger(data);
         toast.success(MENSAJE_EXITO.CANJE);
         agregarInfoUsuario({...usuario, ...data});
         navigate("/");

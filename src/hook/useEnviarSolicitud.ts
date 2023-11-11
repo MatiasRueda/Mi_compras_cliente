@@ -1,16 +1,22 @@
+import useSWRMutation from 'swr/mutation';
+
 export enum METODO {
     PUT = "PUT",
     POST = "POST"
 }
 
-export async function useEnviarSolicitud<T> (data: T, url: string, metodo: METODO) {
-    const informacionDato: RequestInit = {
-        method: metodo,
-        body: JSON.stringify(data), 
-        headers: {
-            "Accept" : "application/json",
-            "Content-Type" : "application/json",
-        }
+export default function useEnviarSolicitud<T, K>(url: string, metodo: METODO) {
+    
+    async function enviarSolicitud(url: any, { arg }: { arg: T }): Promise<K> {
+        return fetch(url, {
+            method: metodo,
+            body : JSON.stringify(arg),
+            headers: {
+                "Accept" : "application/json",
+                "Content-Type" : "application/json",
+            }
+        }).then(res => res.json());
     }
-    return  await fetch(url, informacionDato).then(res => res.json()); 
+
+    return useSWRMutation(url, enviarSolicitud);
 }

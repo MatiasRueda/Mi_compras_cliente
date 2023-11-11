@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { METODO , useEnviarSolicitud } from '../../hook/useEnviarSolicitud';
+import useEnviarSolicitud , { METODO } from '../../hook/useEnviarSolicitud';
 import useFetch from '../../hook/useFetch';
 import { MENSAJE_ERROR } from '../../auxiliar/mensajes';
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR, SERVER_PATH_SUSCRIPCIONES } from '../../auxiliar/path';
@@ -23,6 +23,7 @@ type SuscripcionElement = {
 
 function Suscripciones(): JSX.Element {
     const navigate = useNavigate();
+    const enviador = useEnviarSolicitud<Usuario, RespuestaServer<Usuario>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
     const { usuario, agregarInfoUsuario } = useInformacionContext();
     const { data, isLoading, isValidating } = useFetch<RespuestaServer<Suscripcion[]>>(SERVER_PATH_SUSCRIPCIONES, true);
 
@@ -31,7 +32,6 @@ function Suscripciones(): JSX.Element {
     }
 
     const actualizarSuscripcion = async (suscripcion: Suscripcion): Promise<void> => {
-        const urlActualizar: string = SERVER_PATH_ACTUALIZAR;
         if (!usuario) {
             toast.error(MENSAJE_ERROR.NO_INGRESADO);
             navigate("/" + PATH_CLIENT.INGRESAR);
@@ -43,9 +43,9 @@ function Suscripciones(): JSX.Element {
             suscripcionTitulo: suscripcion.titulo,
             suscripcionRestantes: suscripcion.restantes,
         };
-        const respuesta = await useEnviarSolicitud(data, urlActualizar, METODO.PUT);
+        await enviador.trigger(data);
         agregarInfoUsuario({ ...usuario, ...data });
-        toast.success(respuesta.mensaje);
+        toast.success(enviador.data!.mensaje);
         navigate(PATH_CLIENT.INICIO);
     }
 

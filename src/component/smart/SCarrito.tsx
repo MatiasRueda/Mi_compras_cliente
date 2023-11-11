@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
+import useEnviarSolicitud , { METODO } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import { useInformacionContext } from "./SInformacion";
 import DCarrito from "../dumb/DCarrito";
@@ -9,13 +9,14 @@ import DProductoCompra from "../dumb/DProductoCompra";
 import SDescuentos from "./SDescuentos";
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
-import { Usuario } from "../../auxiliar/type";
+import { RespuestaServer, Usuario } from "../../auxiliar/type";
 
 function SCarrito(): JSX.Element {
     const navigate = useNavigate();
     const { usuario, agregarInfoUsuario, carritoProductos, sacarProducto , limpiarCarrito } = useInformacionContext();
     const [ suscripcion, setSuscripcion ] = useState<boolean>(false);
     const [ canje, setCanje ] = useState<boolean>(false);
+    const enviador = useEnviarSolicitud<Usuario, RespuestaServer<undefined>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
     let total = 0;
 
     const productosCreados = (): JSX.Element[] => {
@@ -49,7 +50,7 @@ function SCarrito(): JSX.Element {
             suscripcionRestantes: nuevosSuscripRestantes,
             suscripcionDescuento: !nuevosSuscripRestantes? 0 : usuario.suscripcionDescuento,
         }
-        await useEnviarSolicitud(data, SERVER_PATH_ACTUALIZAR, METODO.PUT);
+        await enviador.trigger(data)
         agregarInfoUsuario({ ...usuario, ...data});
         toast.success(MENSAJE_EXITO.COMPRA);
         limpiarCarrito();

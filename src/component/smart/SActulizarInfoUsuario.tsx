@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
+import useEnviarSolicitud , { METODO } from "../../hook/useEnviarSolicitud";
 import SFormularioActualizar from "./SFormularioActualizar";
 import SOpciones from "./SOpciones";
 import { useInformacionContext } from "./SInformacion";
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR } from "../../auxiliar/path";
+import { RespuestaServer, Usuario } from "../../auxiliar/type";
 
 enum SUB_SECCION {
     NOMBRE = "nombre",
@@ -13,18 +14,20 @@ enum SUB_SECCION {
     CONTRASENIA = "contrasenia"
 }
 
+
 function SActulizarInfoUsuario(): JSX.Element {
     const navigate = useNavigate();
     const { usuario , agregarInfoUsuario } = useInformacionContext();
+    const enviador = useEnviarSolicitud<Usuario, RespuestaServer<undefined>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
     const [ elegido , setElegido ] = useState<SUB_SECCION>(SUB_SECCION.NOMBRE);
 
     const obtenerInformacion = async (data: any) => {
         const {confirmarContrasenia, ...restoInfo} = data;
         const enviarData = {...restoInfo, id: usuario!.id};
-        const respuesta = await useEnviarSolicitud(enviarData, SERVER_PATH_ACTUALIZAR, METODO.PUT);
+        await enviador.trigger(enviarData);
         const {contrasenia, ...sinContrasenia} = restoInfo;
         agregarInfoUsuario({ ...usuario, ...sinContrasenia });
-        toast.success(respuesta.mensaje);
+        toast.success(enviador.data!.mensaje);
         navigate(PATH_CLIENT.INICIO);
     }
 

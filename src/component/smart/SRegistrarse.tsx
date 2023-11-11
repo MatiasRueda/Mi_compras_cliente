@@ -1,23 +1,26 @@
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
+import useEnviarSolicitud , { METODO } from "../../hook/useEnviarSolicitud";
 import FormularioRegister from "./SFormularioRegister";
 import { PATH_CLIENT, SERVER_PATH_REGISTRARSE } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
 import { useInformacionContext } from "./SInformacion";
 import { MENSAJE_ERROR } from "../../auxiliar/mensajes";
+import { RespuestaServer, Usuario } from "../../auxiliar/type";
 
 function SRegister(): JSX.Element {
     const navigate = useNavigate();
+    const enviador = useEnviarSolicitud<Usuario,RespuestaServer<undefined>>(SERVER_PATH_REGISTRARSE, METODO.POST);
     const { usuario } = useInformacionContext();
+
     const register = async (data: any): Promise<void> => {
-        const respuesta = await useEnviarSolicitud(data, SERVER_PATH_REGISTRARSE, METODO.POST);
+        await enviador.trigger(data);
         navigate(PATH_CLIENT.INICIO);
-        if (respuesta.exito) {
-            toast.success(respuesta.mensaje);
+        if (enviador.data!.exito) {
+            toast.success(enviador.data!.mensaje);
             return;
         }
-        toast.error(respuesta.mensaje);
+        toast.error(enviador.data!.mensaje);
     }
 
     return (
