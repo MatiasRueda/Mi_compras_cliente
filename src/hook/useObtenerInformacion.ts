@@ -4,7 +4,7 @@ import useSWRImmutable from "swr/immutable";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
-export default function useFetch<T>(url: string, inmmutable: boolean, opciones?:  Partial<PublicConfiguration<T, any, BareFetcher<T>>>) {
+export default function useObtenerInformacion<T>(url: string, inmmutable: boolean, opciones?:  Partial<PublicConfiguration<T, any, BareFetcher<T>>>) {
     const { data , isValidating , isLoading , mutate , error } = inmmutable? useSWRImmutable<T>(url, fetcher, opciones) :
                                                                    useSWR<T>(url, fetcher, opciones);
 

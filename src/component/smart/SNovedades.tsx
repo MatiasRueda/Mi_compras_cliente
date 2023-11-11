@@ -1,4 +1,4 @@
-import useFetch from "../../hook/useFetch";
+import useObtenerInformacion from "../../hook/useObtenerInformacion";
 import SCarga from "../smart/SCarga";
 import DNovedad from "../dumb/DNovedad";
 import DPagina from "../dumb/DPagina";
@@ -6,7 +6,7 @@ import { SERVER_PATH_NOVEDADES } from "../../auxiliar/path";
 import { Novedad, RespuestaServer } from "../../auxiliar/type";
 
 function SNovedades(): JSX.Element {
-    const { data , isLoading , isValidating } = useFetch<RespuestaServer<Novedad[]>>(SERVER_PATH_NOVEDADES, true);
+    const { data , isLoading , isValidating } = useObtenerInformacion<RespuestaServer<Novedad[]>>(SERVER_PATH_NOVEDADES, true);
 
     return (
         <SCarga mostrarCarga={ isLoading || isValidating }> 

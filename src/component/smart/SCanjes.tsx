@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import useFetch from "../../hook/useFetch";
+import useObtenerInformacion from "../../hook/useObtenerInformacion";
 import useEnviarSolicitud, { METODO } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import { useInformacionContext } from "./SInformacion";
@@ -22,7 +22,7 @@ interface CanjeElement extends Canje {
 function SCanjes(): JSX.Element {
     const navigate = useNavigate();
     const enviador = useEnviarSolicitud<Usuario, RespuestaServer<undefined>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
-    const { data, isLoading, isValidating } = useFetch<RespuestaServer<Canje[]>>(SERVER_PATH_CANJES, true);
+    const { data, isLoading, isValidating } = useObtenerInformacion<RespuestaServer<Canje[]>>(SERVER_PATH_CANJES, true);
     const { usuario, agregarInfoUsuario } = useInformacionContext();
 
     const canjear = async (canje: Canje) => {

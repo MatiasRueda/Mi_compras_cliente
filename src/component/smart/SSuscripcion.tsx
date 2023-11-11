@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import useEnviarSolicitud , { METODO } from '../../hook/useEnviarSolicitud';
-import useFetch from '../../hook/useFetch';
+import useObtenerInformacion from '../../hook/useObtenerInformacion';
 import { MENSAJE_ERROR } from '../../auxiliar/mensajes';
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR, SERVER_PATH_SUSCRIPCIONES } from '../../auxiliar/path';
 import { useInformacionContext } from './SInformacion';
@@ -25,7 +25,7 @@ function Suscripciones(): JSX.Element {
     const navigate = useNavigate();
     const enviador = useEnviarSolicitud<Usuario, RespuestaServer<Usuario>>(SERVER_PATH_ACTUALIZAR, METODO.PUT);
     const { usuario, agregarInfoUsuario } = useInformacionContext();
-    const { data, isLoading, isValidating } = useFetch<RespuestaServer<Suscripcion[]>>(SERVER_PATH_SUSCRIPCIONES, true);
+    const { data, isLoading, isValidating } = useObtenerInformacion<RespuestaServer<Suscripcion[]>>(SERVER_PATH_SUSCRIPCIONES, true);
 
     const beneficiosElementos = (beneficios: string[]): JSX.Element[] => {
         return beneficios.map((beneficio: string) =>  <li key={beneficio}> {beneficio} </li>)

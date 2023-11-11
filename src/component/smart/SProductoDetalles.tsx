@@ -1,7 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../../hook/useFetch";
+import useObtenerInformacion from "../../hook/useObtenerInformacion";
 import { Producto, ProductoCarrito } from "../../auxiliar/type";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import SCarga from "./SCarga";
@@ -16,7 +16,7 @@ function SProductoDetalles(props: {id?: number}): JSX.Element {
     const navigate = useNavigate();
     const id = !props.id? useParams().id : props.id.toString();
     const url: string = PRODUCTO_ESPECIFICO + id;
-    const { data , isLoading , isValidating } = useFetch<Producto>(url , true);
+    const { data , isLoading , isValidating } = useObtenerInformacion<Producto>(url , true);
 
     const agregar = (producto: Producto, precio: number , cantidad: number): void => {
         navigate(PATH_CLIENT.INICIO);
