@@ -5,7 +5,6 @@ import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import SFormularioActualizar from "./SFormularioActualizar";
 import SOpciones from "./SOpciones";
 import { useInformacionContext } from "./SInformacion";
-import DLista from "../dumb/DLista";
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR } from "../../auxiliar/path";
 
 enum SUB_SECCION {
@@ -33,20 +32,32 @@ function SActulizarInfoUsuario(): JSX.Element {
         setElegido(subSeccion);
     }
 
-    const botones: JSX.Element[] = [
-        <button key={SUB_SECCION.NOMBRE} children={SUB_SECCION.NOMBRE} onClick={() => {aplicarAccion(SUB_SECCION.NOMBRE)}}/>,
-        <button key={SUB_SECCION.EMAIL} children={SUB_SECCION.EMAIL} onClick={() => {aplicarAccion(SUB_SECCION.EMAIL)}}/>,
-        <button key={SUB_SECCION.CONTRASENIA} children={SUB_SECCION.CONTRASENIA} onClick={() => {aplicarAccion(SUB_SECCION.CONTRASENIA)}}/>]
-
     return (
-        <DLista clase="cont-actualizar">
-            <SOpciones lista={botones} clase="cont-acciones-actualizar" 
+        <div className="cont-actualizar">
+            <SOpciones clase="cont-acciones-actualizar" 
                         opcionClase="cont-boton-opcion" layoutClase="morado"
-                        elegido={elegido}/>
-            {SUB_SECCION.NOMBRE == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} nombre={true} />}
-            {SUB_SECCION.EMAIL == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} email={true} />}
-            {SUB_SECCION.CONTRASENIA == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} contrasenia={true}/>}
-        </DLista>
+                        elegido={elegido}>
+                <button key={SUB_SECCION.NOMBRE} 
+                        children={SUB_SECCION.NOMBRE} 
+                        onClick={() => {aplicarAccion(SUB_SECCION.NOMBRE)}}/>,
+                <button key={SUB_SECCION.EMAIL} 
+                        children={SUB_SECCION.EMAIL} 
+                        onClick={() => {aplicarAccion(SUB_SECCION.EMAIL)}}/>,
+                <button key={SUB_SECCION.CONTRASENIA} 
+                        children={SUB_SECCION.CONTRASENIA} 
+                        onClick={() => {aplicarAccion(SUB_SECCION.CONTRASENIA)}}/>
+            </SOpciones>
+
+            {SUB_SECCION.NOMBRE == elegido && 
+                <SFormularioActualizar nombre={true} 
+                                       enviarInformacion={obtenerInformacion}/>}
+            {SUB_SECCION.EMAIL == elegido && 
+                <SFormularioActualizar email={true} 
+                                       enviarInformacion={obtenerInformacion}/>}
+            {SUB_SECCION.CONTRASENIA == elegido && 
+                <SFormularioActualizar contrasenia={true}
+                                       enviarInformacion={obtenerInformacion}/>}
+        </div>
  
     )
 }

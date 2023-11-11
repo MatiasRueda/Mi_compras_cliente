@@ -6,7 +6,6 @@ import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import { useInformacionContext } from "./SInformacion";
 import SCarga from "./SCarga";
-import DLista from "../dumb/DLista";
 import DCanje from "../dumb/DCanje";
 import { SERVER_PATH_ACTUALIZAR, SERVER_PATH_CANJES } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
@@ -61,9 +60,10 @@ function SCanjes(): JSX.Element {
     return (
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
             <SCarga mostrarCarga={ isLoading || isValidating }>
-                <DLista clase="cont-canjes">
-                    {data?.map(crearCanje).map((canje) => <DCanje key={canje.titulo} {...canje}/>)}
-                </DLista>
+                <div className= "cont-canjes">
+                    {data?.map(crearCanje).map((canje) => 
+                        <DCanje key={canje.titulo} {...canje}/>)}
+                </div>
             </SCarga>
         </SVerificar>  
     )

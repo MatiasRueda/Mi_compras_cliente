@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Key, ReactNode } from "react";
 
-function APagina(props: { llave?: Key, children: ReactNode }): JSX.Element {
+function APagina(props: { llave?: Key, clase: string , children: ReactNode }): JSX.Element {
     return (
         <AnimatePresence>
             <motion.div 
                 key={props.llave}
+                className={props.clase}
                 style={{width: "100%"}}
                 initial={{ x: "-125%" }}
                 transition={{ delay: 0.70 }}

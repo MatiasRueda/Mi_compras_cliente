@@ -10,7 +10,9 @@ function SNovedades(): JSX.Element {
 
     return (
         <SCarga mostrarCarga={ isLoading || isValidating }> 
-            <DPagina lista={data?.map((novedad) => <DNovedad key={novedad.id} {...novedad}/>)} clase="cont-novedades"/>
+            <DPagina clase="cont-novedades" 
+                     lista={data?.map((novedad) => 
+                             <DNovedad key={novedad.id} {...novedad}/>)}/>
         </SCarga>
     )
 }

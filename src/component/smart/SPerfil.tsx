@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import SActulizarInfoUsuario from "./SActulizarInfoUsuario";
 import { useInformacionContext } from "./SInformacion";
 import DInfoUsuario from "../dumb/DInfoUsuario";
-import DLista from "../dumb/DLista";
 import { PATH_CLIENT } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
 import { MENSAJE_ERROR } from "../../auxiliar/mensajes";
@@ -35,13 +34,16 @@ function SPerfil(): JSX.Element {
         navigate(PATH_CLIENT.INICIO);
     }
 
-    const botones: JSX.Element[] = [<button key={"informacion"} style={info? elegido : undefined} children={"Informacion"} onClick={ingresarAInfo}/>,
-                                    <button key={"actualizar"} style={actualizar? elegido : undefined} children={"Actualizar"} onClick={ingresarAActualizar}/>,
-                                    <button key={"cerrarSesion"} children={"Cerrar Sesion"} onClick={cerrarSesion}/>]
-
     return (
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
-            <DLista clase="cont-acciones" children={botones}/>
+            <div className="cont-acciones">
+                <button key={"informacion"} style={info? elegido : undefined} 
+                        children={"Informacion"} onClick={ingresarAInfo}/>,
+                <button key={"actualizar"} style={actualizar? elegido : undefined} 
+                        children={"Actualizar"} onClick={ingresarAActualizar}/>,
+                <button key={"cerrarSesion"} children={"Cerrar Sesion"} 
+                        onClick={cerrarSesion}/>
+            </div>
             { info && <DInfoUsuario usuario={usuario}/> }
             { actualizar && <SActulizarInfoUsuario/>} 
         </SVerificar>

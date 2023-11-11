@@ -1,26 +1,27 @@
+import { Children, ReactNode, isValidElement } from "react";
 import DOpcion from "../dumb/DOpcion";
-import DLista from "../dumb/DLista";
 
 type Parametros = {
-    lista: JSX.Element[];
+    children: ReactNode;
     clase: string;
     opcionClase: string;
     layoutClase: string;
     elegido?: string;
 }
 
-function SOpciones({ lista , clase, opcionClase, layoutClase, elegido }: Parametros): JSX.Element {
-    const opciones: JSX.Element[] = lista.map(
-        (elemento: JSX.Element) => 
-            <DOpcion  key={elemento.props.children}
-                      divClase={opcionClase}
-                      layoutClase={layoutClase}
-                      condicion={elemento.props.children == elegido}>
-                        {elemento}
-            </DOpcion>)
-    
+function SOpciones({ children , clase, opcionClase, layoutClase, elegido }: Parametros): JSX.Element {
     return (
-        <DLista clase={clase} children= {opciones}/>
+        <div className={clase}>
+            {Children.map(children, child => {
+                if(!isValidElement(child)) return child;
+                return <DOpcion key={child.props.children}
+                                divClase={opcionClase}
+                                layoutClase={layoutClase}
+                                condicion={child.props.children == elegido}>
+                                    {child}
+                </DOpcion>
+            })}
+        </div>
     )
 }
 

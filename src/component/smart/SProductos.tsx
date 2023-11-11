@@ -39,29 +39,28 @@ function SProductos(props:{caracteristica?: string}): JSX.Element {
     }
 
     return (
-        <Fragment >
-            <SCarga mostrarCarga={false}>
-                {!productosCreados.length ? 
-                    <h2>No hay productos</h2> :
-                    <Fragment>
-                        <h2 className="cont-subtitulo">Productos: </h2>
-                        <DPagina clase="cont-productos" 
-                                 llave={!props.caracteristica? nroPagina : props.caracteristica} 
-                                 lista={productosCreados.length >= limite? 
-                                            productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
-                                            productosCreados}/>
-                        <DNumeroPagina nroPagina={nroPagina}
-                                       siguiente={(cantidadDesplzamiento * nroPagina) !== limite && 
-                                                    <button onClick={() => {manipularOffset("siguiente")}}>
+        <SCarga mostrarCarga={false}>
+            {!productosCreados.length ? 
+                <h2>No hay productos</h2> :
+                <Fragment>
+                    <h2 className="cont-subtitulo">Productos: </h2>
+                    <DPagina clase="cont-productos" 
+                             llave={!props.caracteristica? nroPagina : props.caracteristica} 
+                             lista={productosCreados.length >= limite? 
+                                        productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
+                                        productosCreados}/>
+                    <DNumeroPagina nroPagina={nroPagina}
+                                   siguiente={(cantidadDesplzamiento * nroPagina) !== limite && 
+                                                <button onClick={() => {manipularOffset("siguiente")}}>
                                                         {">"}
-                                                    </button>}
-                                       anterior={offSet != 0 && 
-                                                    <button onClick={() => {manipularOffset("anterior")}}>
+                                                </button>}
+                                    anterior={offSet != 0 && 
+                                                 <button onClick={() => {manipularOffset("anterior")}}>
                                                         {"<"}
-                                                    </button>}/>
-                    </Fragment>}
-            </SCarga>
-        </Fragment>
+                                                 </button>}/>
+                </Fragment>}
+        </SCarga>
+
     )
 }
 
