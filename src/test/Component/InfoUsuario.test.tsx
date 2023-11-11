@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render , screen } from "@testing-library/react";
 import DInfoUsuario from "../../component/dumb/DInfoUsuario";
-import { usuario1Test } from "../auxiliar/ejemplos";
+import { usuario1Test } from "../aulixiliar/ejemplos";
 
 describe("- Test Informacion usuario -" ,() => {
     beforeEach(() => {

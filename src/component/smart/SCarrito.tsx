@@ -7,9 +7,9 @@ import { useInformacionContext } from "./SInfoProvider";
 import DCarrito from "../dumb/DCarrito";
 import DProductoCompra from "../dumb/DProductoCompra";
 import SDescuentos from "./SDescuentos";
-import { Usuario } from "../../../../auxiliar/type";
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
+import { Usuario } from "../../auxiliar/type";
 
 function SCarrito(): JSX.Element {
     const navigate = useNavigate();

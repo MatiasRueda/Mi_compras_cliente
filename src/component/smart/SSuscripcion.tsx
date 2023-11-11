@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { METODO , useEnviarSolicitud } from '../../hook/useEnviarSolicitud';
 import useFetch from '../../hook/useFetch';
-import { Suscripcion, Usuario } from '../../../../auxiliar/type';
 import { MENSAJE_ERROR } from '../../auxiliar/mensajes';
 import { listaElementos } from '../../auxiliar/listaElementos';
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR, SERVER_PATH_SUSCRIPCIONES } from '../../auxiliar/path';
@@ -10,6 +9,7 @@ import { useInformacionContext } from './SInfoProvider';
 import SCarga from './SCarga';
 import DPagina from '../dumb/DPagina';
 import DSuscripcion from '../dumb/DSuscripcion';
+import { Suscripcion, Usuario } from '../../auxiliar/type';
 
 
 function Suscripciones(): JSX.Element {

@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render , screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import DProductoDetalles from "../../component/dumb/DProductoDetalles";
-import { producto1Test } from "../auxiliar/ejemplos";
+import { producto1Test } from "../aulixiliar/ejemplos";
 
 describe("- Test Productos Detalles -",() => {
     let aumentar: jest.Mock;

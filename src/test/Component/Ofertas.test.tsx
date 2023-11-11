@@ -4,7 +4,7 @@ import user from "@testing-library/user-event";
 import { useInformacionContext  } from "../../component/smart/SInfoProvider";
 import SOfertas from "../../component/smart/SOfertas";
 import { BrowserRouter } from "react-router-dom";
-import { oferta1Test, oferta2Test } from "../auxiliar/ejemplos";
+import { oferta1Test, oferta2Test } from "../aulixiliar/ejemplos";
 
 const maximoMiliSegundosEspera = 50000;
 const maximoMiliSegundosParaDesmontar = 2000;

@@ -1,4 +1,4 @@
-import { Usuario } from "../../../../auxiliar/type";
+import { Usuario } from "../../auxiliar/type";
 
 function DInfoUsuario(props: { usuario?: Usuario }): JSX.Element {
     return (

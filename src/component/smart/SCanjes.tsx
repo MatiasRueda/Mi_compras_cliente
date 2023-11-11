@@ -9,9 +9,9 @@ import { useInformacionContext } from "./SInfoProvider";
 import SCarga from "./SCarga";
 import DLista from "../dumb/DLista";
 import DCanje from "../dumb/DCanje";
-import { Canje } from "../../../../auxiliar/type";
 import { SERVER_PATH_ACTUALIZAR, SERVER_PATH_CANJES } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
+import { Canje } from "../../auxiliar/type";
 
 
 interface CanjeElement extends Canje {

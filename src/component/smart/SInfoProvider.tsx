@@ -1,8 +1,7 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import useFetch from "../../hook/useFetch";
-import { Data, Informacion, Oferta, ProductoCarrito } from "../../auxiliar/type";
+import { Data, Informacion, Oferta, ProductoCarrito, Usuario } from "../../auxiliar/type";
 import encontrarOfertas from "../../auxiliar/encontrarOfertas";
-import { Usuario } from "../../../../auxiliar/type";
 import { TODOS_PRODUCTOS } from "../../auxiliar/path";
 
 const informacionContext = createContext<Informacion | undefined>(undefined);

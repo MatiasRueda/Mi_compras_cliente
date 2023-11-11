@@ -1,5 +1,4 @@
-import { Usuario } from "../../../../auxiliar/type";
-import { Oferta, Producto, ProductoCarrito } from "../../auxiliar/type";
+import { Oferta, Producto, ProductoCarrito, Usuario } from "../../auxiliar/type";
 
 export const usuario1Test: Usuario = {
     id: 1,

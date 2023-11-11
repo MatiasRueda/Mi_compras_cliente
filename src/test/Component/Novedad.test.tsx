@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 import { render , screen } from "@testing-library/react";
 import DNovedad from "../../component/dumb/DNovedad";
 
-
 describe("- Test Novedad -", () => {
     const titulo: string = "Titulo de la novedad";
     const descripcion: string = "Esta es una descripcion"

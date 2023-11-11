@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render , screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import DOferta from "../../component/dumb/DOferta";
-import { oferta1Test } from "../auxiliar/ejemplos";
+import { oferta1Test } from "../aulixiliar/ejemplos";
 
 describe("- Test Oferta -", () => {
     let verDetalles: jest.Mock;
