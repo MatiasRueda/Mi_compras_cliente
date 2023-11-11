@@ -2,6 +2,13 @@
 de la seccion client y asi evitar repetir el codigo */
 
 // Type del producto que llega de la peticion a dummyjson
+
+export type RespuestaServer<T> = {
+    mensaje: string;
+    exito: boolean;
+    dato?: T;
+}
+
 export type Producto = {
     id: number;
     title: string;

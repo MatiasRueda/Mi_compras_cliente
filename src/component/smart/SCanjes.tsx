@@ -9,7 +9,7 @@ import SCarga from "./SCarga";
 import DCanje from "../dumb/DCanje";
 import { SERVER_PATH_ACTUALIZAR, SERVER_PATH_CANJES } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
-import { Canje } from "../../auxiliar/type";
+import { Canje, RespuestaServer } from "../../auxiliar/type";
 
 
 interface CanjeElement extends Canje {
@@ -21,7 +21,7 @@ interface CanjeElement extends Canje {
 
 function SCanjes(): JSX.Element {
     const navigate = useNavigate();
-    const { data, isLoading, isValidating } = useFetch<Canje[]>(SERVER_PATH_CANJES, true);
+    const { data, isLoading, isValidating } = useFetch<RespuestaServer<Canje[]>>(SERVER_PATH_CANJES, true);
     const { usuario, agregarInfoUsuario } = useInformacionContext();
 
     const canjear = async (canje: Canje) => {
@@ -61,7 +61,7 @@ function SCanjes(): JSX.Element {
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
             <SCarga mostrarCarga={ isLoading || isValidating }>
                 <div className= "cont-canjes">
-                    {data?.map(crearCanje).map((canje) => 
+                    {data?.dato!.map(crearCanje).map((canje) => 
                         <DCanje key={canje.titulo} {...canje}/>)}
                 </div>
             </SCarga>

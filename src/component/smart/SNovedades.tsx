@@ -3,15 +3,15 @@ import SCarga from "../smart/SCarga";
 import DNovedad from "../dumb/DNovedad";
 import DPagina from "../dumb/DPagina";
 import { SERVER_PATH_NOVEDADES } from "../../auxiliar/path";
-import { Novedad } from "../../auxiliar/type";
+import { Novedad, RespuestaServer } from "../../auxiliar/type";
 
 function SNovedades(): JSX.Element {
-    const { data , isLoading , isValidating } = useFetch<Novedad[]>(SERVER_PATH_NOVEDADES, true);
+    const { data , isLoading , isValidating } = useFetch<RespuestaServer<Novedad[]>>(SERVER_PATH_NOVEDADES, true);
 
     return (
         <SCarga mostrarCarga={ isLoading || isValidating }> 
             <DPagina clase="cont-novedades" 
-                     lista={data?.map((novedad) => 
+                     lista={data?.dato!.map((novedad) => 
                              <DNovedad key={novedad.id} {...novedad}/>)}/>
         </SCarga>
     )

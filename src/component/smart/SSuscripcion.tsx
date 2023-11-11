@@ -8,7 +8,7 @@ import { useInformacionContext } from './SInformacion';
 import SCarga from './SCarga';
 import DPagina from '../dumb/DPagina';
 import DSuscripcion from '../dumb/DSuscripcion';
-import { Suscripcion, Usuario } from '../../auxiliar/type';
+import { RespuestaServer, Suscripcion, Usuario } from '../../auxiliar/type';
 
 type SuscripcionElement = {
     titulo: string;
@@ -24,7 +24,7 @@ type SuscripcionElement = {
 function Suscripciones(): JSX.Element {
     const navigate = useNavigate();
     const { usuario, agregarInfoUsuario } = useInformacionContext();
-    const { data, isLoading, isValidating } = useFetch<Suscripcion[]>(SERVER_PATH_SUSCRIPCIONES, true);
+    const { data, isLoading, isValidating } = useFetch<RespuestaServer<Suscripcion[]>>(SERVER_PATH_SUSCRIPCIONES, true);
 
     const beneficiosElementos = (beneficios: string[]): JSX.Element[] => {
         return beneficios.map((beneficio: string) =>  <li key={beneficio}> {beneficio} </li>)
@@ -61,7 +61,7 @@ function Suscripciones(): JSX.Element {
     return (
         <SCarga mostrarCarga={isLoading || isValidating}>
             <DPagina clase='cont-suscripciones' 
-                lista={data?.map(crearSuscripcionElement).map((suscripcion) => 
+                lista={data?.dato!.map(crearSuscripcionElement).map((suscripcion) => 
                     <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}/>
         </SCarga>
     )
