@@ -99,6 +99,7 @@
 }
 
 .producto {
+    margin: 1rem;
     height: 20rem;
     width: 25rem;
     position: relative;

@@ -48,7 +48,7 @@ function ASlideShow(props: {imagenes?: string[]}): JSX.Element {
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      transition={{ delay: 0.3 }}/>
+                      transition={{ delay: 0.3 , type: 'easyOut' }}/>
               </AnimatePresence>
             </div>
             <div className="next" onClick={() => paginate(1)}>

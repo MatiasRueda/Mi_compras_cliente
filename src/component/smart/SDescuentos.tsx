@@ -1,4 +1,4 @@
-import { CSSProperties, Fragment } from "react";
+import { CSSProperties } from "react";
 import DDescuento from "../dumb/DDescuento";
 
 type Parametros = {
@@ -17,9 +17,7 @@ function SDescuentos({...res}: Parametros): JSX.Element {
     const estiloBotonSuscrip: CSSProperties = res.suscripcion? {color: "white", backgroundColor: "blue"} : 
                                                             {color: "black", backgroundColor: "white"}
 
-    return (
-        <Fragment>
-            <DDescuento botonCanje={!res.canjeDeshabilitar &&
+    return <DDescuento botonCanje={!res.canjeDeshabilitar &&
                             <button style={estiloBotonCanje} 
                                     aria-label="canje"
                                     onClick={res.canjeAplicar}>
@@ -31,8 +29,6 @@ function SDescuentos({...res}: Parametros): JSX.Element {
                                     onClick={res.suscripcionAplicar}>
                                         Suscripcion
                             </button>}/>
-        </Fragment>
-    )
 }
 
 export default SDescuentos;

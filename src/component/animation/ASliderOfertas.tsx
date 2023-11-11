@@ -48,7 +48,7 @@ function ASliderOfertas(props:{elementos?: JSX.Element[], clasePadre: string, cl
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      transition={{ delay: 0.3 }}>
+                      transition={{ delay: 0.3 , type: 'easyOut'}}>
                         {props.elementos != undefined && props.elementos[imagenIndex]}
                 </motion.div>
               </AnimatePresence>
