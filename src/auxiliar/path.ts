@@ -32,7 +32,7 @@ export enum PATH_CLIENT {
 export const TODOS_PRODUCTOS: string = "https://dummyjson.com/products?skip=0&limit=100";
 export const PRODUCTO_ESPECIFICO: string = "https://dummyjson.com/products/";
 
-const SERVER: string = "http://localhost:5000" ;
+const SERVER: string = import.meta.env.VITE_SERVER!;
 
 export const SERVER_PATH_INGRESAR = SERVER + PATH.INGRESAR;
 export const SERVER_PATH_REGISTRARSE = SERVER + PATH.REGISTRAR;

@@ -3,7 +3,6 @@ import toast from 'react-hot-toast';
 import { METODO , useEnviarSolicitud } from '../../hook/useEnviarSolicitud';
 import useFetch from '../../hook/useFetch';
 import { MENSAJE_ERROR } from '../../auxiliar/mensajes';
-import { listaElementos } from '../../auxiliar/listaElementos';
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR, SERVER_PATH_SUSCRIPCIONES } from '../../auxiliar/path';
 import { useInformacionContext } from './SInfoProvider';
 import SCarga from './SCarga';
@@ -11,6 +10,16 @@ import DPagina from '../dumb/DPagina';
 import DSuscripcion from '../dumb/DSuscripcion';
 import { Suscripcion, Usuario } from '../../auxiliar/type';
 
+type SuscripcionElement = {
+    titulo: string;
+    tipo: string;
+    precio: number;
+    descuento: number;
+    restantes: number;
+    beneficios: JSX.Element[];
+    click: () => void;
+    deshabilitar: boolean;
+}
 
 function Suscripciones(): JSX.Element {
     const navigate = useNavigate();
@@ -40,17 +49,20 @@ function Suscripciones(): JSX.Element {
         navigate(PATH_CLIENT.INICIO);
     }
 
-    const suscripciones: JSX.Element[] = listaElementos(DSuscripcion, 
-        data?.map((suscripcion: Suscripcion) => 
-            { return {...suscripcion, 
-                        beneficios: beneficiosElementos(suscripcion.beneficios), 
-                        click: () => { actualizarSuscripcion(suscripcion) } ,
-                        deshabilitar: (suscripcion.titulo === usuario?.suscripcionTitulo)
-                    }}));
+    const crearSuscripcionElement = (suscripcion: Suscripcion): SuscripcionElement => {
+        return {
+            ...suscripcion,
+            beneficios: beneficiosElementos(suscripcion.beneficios), 
+            click: () => { actualizarSuscripcion(suscripcion) } ,
+            deshabilitar: (suscripcion.titulo === usuario?.suscripcionTitulo)
+        }
+    }
 
     return (
         <SCarga mostrarCarga={isLoading || isValidating}>
-            <DPagina lista={suscripciones} clase='cont-suscripciones'/>
+            <DPagina clase='cont-suscripciones' 
+                lista={data?.map(crearSuscripcionElement).map((suscripcion) => 
+                    <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}/>
         </SCarga>
     )
 }

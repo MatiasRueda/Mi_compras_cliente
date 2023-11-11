@@ -1,16 +1,16 @@
 import useFetch from "../../hook/useFetch";
-import { listaElementos } from "../../auxiliar/listaElementos";
 import SCarga from "../smart/SCarga";
 import DNovedad from "../dumb/DNovedad";
 import DPagina from "../dumb/DPagina";
 import { SERVER_PATH_NOVEDADES } from "../../auxiliar/path";
+import { Novedad } from "../../auxiliar/type";
 
 function SNovedades(): JSX.Element {
-    const { data , isLoading , isValidating } = useFetch(SERVER_PATH_NOVEDADES, true);
+    const { data , isLoading , isValidating } = useFetch<Novedad[]>(SERVER_PATH_NOVEDADES, true);
 
     return (
         <SCarga mostrarCarga={ isLoading || isValidating }> 
-            <DPagina lista={listaElementos(DNovedad, data)} clase="cont-novedades"/>
+            <DPagina lista={data?.map((novedad) => <DNovedad key={novedad.id} {...novedad}/>)} clase="cont-novedades"/>
         </SCarga>
     )
 }

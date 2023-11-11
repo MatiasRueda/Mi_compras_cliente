@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import useFetch from "../../hook/useFetch";
 import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
-import { listaElementos } from "../../auxiliar/listaElementos";
 import { useInformacionContext } from "./SInfoProvider";
 import SCarga from "./SCarga";
 import DLista from "../dumb/DLista";
@@ -59,15 +58,12 @@ function SCanjes(): JSX.Element {
         return canjeElement;
     }
 
-    const controlarHabilitacion = (): Canje[] => { 
-        if (!data) return [];     
-        return data.map(crearCanje);
-    }
-
     return (
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
             <SCarga mostrarCarga={ isLoading || isValidating }>
-                <DLista children={listaElementos(DCanje, controlarHabilitacion())} clase="cont-canjes"/>
+                <DLista clase="cont-canjes">
+                    {data?.map(crearCanje).map((canje) => <DCanje key={canje.titulo} {...canje}/>)}
+                </DLista>
             </SCarga>
         </SVerificar>  
     )

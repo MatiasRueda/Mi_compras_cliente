@@ -1,4 +1,4 @@
-import { CSSProperties, Fragment, useState } from "react";
+import { CSSProperties , useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SActulizarInfoUsuario from "./SActulizarInfoUsuario";
 import { useInformacionContext } from "./SInfoProvider";
