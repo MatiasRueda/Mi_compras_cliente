@@ -4,7 +4,7 @@ import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import FormularioRegister from "./SFormularioRegister";
 import { PATH_CLIENT, SERVER_PATH_REGISTRARSE } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import { MENSAJE_ERROR } from "../../auxiliar/mensajes";
 
 function SRegister(): JSX.Element {

@@ -1,5 +1,5 @@
 import { Link, Location, To, useLocation } from "react-router-dom";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DLista from "../dumb/DLista";
 import DOpcion from "../dumb/DOpcion";
 

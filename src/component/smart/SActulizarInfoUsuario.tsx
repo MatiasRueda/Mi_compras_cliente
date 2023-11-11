@@ -4,14 +4,20 @@ import toast from "react-hot-toast";
 import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import SFormularioActualizar from "./SFormularioActualizar";
 import SOpciones from "./SOpciones";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DLista from "../dumb/DLista";
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR } from "../../auxiliar/path";
+
+enum SUB_SECCION {
+    NOMBRE = "nombre",
+    EMAIL = "email",
+    CONTRASENIA = "contrasenia"
+}
 
 function SActulizarInfoUsuario(): JSX.Element {
     const navigate = useNavigate();
     const { usuario , agregarInfoUsuario } = useInformacionContext();
-    const [ elegido , setElegido ] = useState<string>("nombre");
+    const [ elegido , setElegido ] = useState<SUB_SECCION>(SUB_SECCION.NOMBRE);
 
     const obtenerInformacion = async (data: any) => {
         const {confirmarContrasenia, ...restoInfo} = data;
@@ -23,22 +29,23 @@ function SActulizarInfoUsuario(): JSX.Element {
         navigate(PATH_CLIENT.INICIO);
     }
 
-    const aplicarAccion = (nombre: string) => {
-        setElegido(nombre);
+    const aplicarAccion = (subSeccion: SUB_SECCION) => {
+        setElegido(subSeccion);
     }
 
-    const botones: JSX.Element[] = [<button key={"nombre"} children={"nombre"} onClick={() => {aplicarAccion("nombre")}}/>,
-                                    <button key={"email"} children={"email"} onClick={() => {aplicarAccion("email")}}/>,
-                                    <button key={"contrasenia"} children={"contrasenia"} onClick={() => {aplicarAccion("contrasenia")}}/>]
+    const botones: JSX.Element[] = [
+        <button key={SUB_SECCION.NOMBRE} children={SUB_SECCION.NOMBRE} onClick={() => {aplicarAccion(SUB_SECCION.NOMBRE)}}/>,
+        <button key={SUB_SECCION.EMAIL} children={SUB_SECCION.EMAIL} onClick={() => {aplicarAccion(SUB_SECCION.EMAIL)}}/>,
+        <button key={SUB_SECCION.CONTRASENIA} children={SUB_SECCION.CONTRASENIA} onClick={() => {aplicarAccion(SUB_SECCION.CONTRASENIA)}}/>]
 
     return (
         <DLista clase="cont-actualizar">
             <SOpciones lista={botones} clase="cont-acciones-actualizar" 
                         opcionClase="cont-boton-opcion" layoutClase="morado"
                         elegido={elegido}/>
-            {"nombre" == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} nombre={true} />}
-            {"email" == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} email={true} />}
-            {"contrasenia" == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} contrasenia={true}/>}
+            {SUB_SECCION.NOMBRE == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} nombre={true} />}
+            {SUB_SECCION.EMAIL == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} email={true} />}
+            {SUB_SECCION.CONTRASENIA == elegido && <SFormularioActualizar enviarInformacion={obtenerInformacion} contrasenia={true}/>}
         </DLista>
  
     )

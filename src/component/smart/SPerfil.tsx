@@ -1,7 +1,7 @@
 import { CSSProperties , useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SActulizarInfoUsuario from "./SActulizarInfoUsuario";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DInfoUsuario from "../dumb/DInfoUsuario";
 import DLista from "../dumb/DLista";
 import { PATH_CLIENT } from "../../auxiliar/path";

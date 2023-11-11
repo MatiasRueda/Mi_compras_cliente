@@ -3,7 +3,7 @@ import { render , screen } from "@testing-library/react";
 import SCompras from "../../component/smart/SCompras";
 import DCompras from "../../component/dumb/DCompras";
 import { BrowserRouter } from "react-router-dom";
-import { useInformacionContext } from "../../component/smart/SInfoProvider";
+import { useInformacionContext } from "../../component/smart/SInformacion";
 import { carritoProductos1Test, usuario1Test } from "../aulixiliar/ejemplos";
 
 jest.mock("../../component/smart/SInfoProvider");

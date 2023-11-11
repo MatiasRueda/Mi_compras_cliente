@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import useFetch from "../../hook/useFetch";
 import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import SCarga from "./SCarga";
 import DLista from "../dumb/DLista";
 import DCanje from "../dumb/DCanje";

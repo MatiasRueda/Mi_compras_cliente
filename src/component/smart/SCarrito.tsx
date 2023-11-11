@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { METODO, useEnviarSolicitud } from "../../hook/useEnviarSolicitud";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DCarrito from "../dumb/DCarrito";
 import DProductoCompra from "../dumb/DProductoCompra";
 import SDescuentos from "./SDescuentos";

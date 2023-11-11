@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Producto } from "../../auxiliar/type";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import SCarga from "./SCarga";
 import DProducto from "../dumb/DProducto";
 import DPagina from "../dumb/DPagina";

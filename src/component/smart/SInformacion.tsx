@@ -10,7 +10,7 @@ export function useInformacionContext(): Informacion {
     return useContext(informacionContext)!;
 }
 
-function SInformacionProvider(props: { children: ReactNode }): JSX.Element { 
+function SInformacion(props: { children: ReactNode }): JSX.Element { 
     const [ usuario, setUsuario ] = useState<Usuario | undefined>(undefined);
     const [ carritoProductos, setCarritoProductos ] = useState<Map<number, ProductoCarrito>>(new Map()); 
     const { data } = useFetch<Data>( TODOS_PRODUCTOS , true, {suspense : true});
@@ -78,4 +78,4 @@ function SInformacionProvider(props: { children: ReactNode }): JSX.Element {
     )
 }
 
-export default SInformacionProvider;
+export default SInformacion;

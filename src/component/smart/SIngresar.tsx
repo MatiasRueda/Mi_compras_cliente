@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useEnviarSolicitud , METODO } from "../../hook/useEnviarSolicitud";
 import FormularioLogin from "./SFormularioLogin";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import { PATH_CLIENT, SERVER_PATH_INGRESAR } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
 import { MENSAJE_ERROR } from "../../auxiliar/mensajes";

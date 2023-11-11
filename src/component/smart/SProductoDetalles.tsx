@@ -6,7 +6,7 @@ import { Producto, ProductoCarrito } from "../../auxiliar/type";
 import { MENSAJE_ERROR, MENSAJE_EXITO } from "../../auxiliar/mensajes";
 import SCarga from "./SCarga";
 import SPrecio from "./SPrecio";
-import { useInformacionContext, } from "./SInfoProvider";
+import { useInformacionContext, } from "./SInformacion";
 import DProductoDetalles from "../dumb/DProductoDetalles";
 import { PATH_CLIENT, PRODUCTO_ESPECIFICO } from "../../auxiliar/path";
 

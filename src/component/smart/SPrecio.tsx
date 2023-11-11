@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Producto } from "../../auxiliar/type";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DPrecio from "../dumb/DPrecio";
 import DPrecioDescontado from "../dumb/DPrecioDescontado";
 

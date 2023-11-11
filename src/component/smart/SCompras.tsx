@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { PATH_CLIENT } from "../../auxiliar/path";
-import { useInformacionContext } from "./SInfoProvider";
+import { useInformacionContext } from "./SInformacion";
 import DCompras from "../dumb/DCompras";
 
 function SCompras(): JSX.Element {
