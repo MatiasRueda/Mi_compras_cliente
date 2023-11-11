@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+}
+
+header {
+    min-height: 5rem;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    border-bottom: black solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main {
+    margin: 0 auto;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    width: 90%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    height: 6rem;
+    border-top: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1280px) {
+    header {
+        padding-top: 1rem;
+    }
+
+}

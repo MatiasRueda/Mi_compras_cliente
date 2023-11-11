@@ -1,0 +1,25 @@
+.pagina-nodevades {
+    align-content: space-around;
+}
+
+.cont-novedades {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.cont-novedad {
+    width: 70%;
+}
+
+@media (max-width: 1250px) {
+
+    .pagina-nodevades {
+        padding-top: 12rem ;
+    }
+
+    .cont-novedad {
+        width: 100%;
+    }
+}

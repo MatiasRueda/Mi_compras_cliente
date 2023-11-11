@@ -1,0 +1,57 @@
+.pagina-suscripcion {
+    align-content: space-around;
+}
+
+.cont-suscripciones {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont-suscripcion {
+    height: 33rem;
+    width: 17rem;
+    border: black solid 1px;
+    border-radius: 3rem;
+    background-color: rgb(174, 172, 246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-suscripcion ul {
+    padding-right: 1.1rem;
+}
+
+.cont-suscripcion h5 {
+    font-size: 1.5em;
+}
+
+.cont-suscripcion button {
+    margin-top: 3rem;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.cont-suscripcion button:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 1280px) {
+    .pagina-suscripcion {
+        padding-top: 12rem;
+    }
+
+    .cont-suscripciones {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .cont-suscripcion {
+        margin-bottom: 3rem;
+    }
+}

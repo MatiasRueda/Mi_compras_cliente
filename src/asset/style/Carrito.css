@@ -1,0 +1,166 @@
+.pagina-carrito {
+    width: 98%;
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-carrito {
+    width: 100%;
+}
+
+.cont-productos-comprar {
+    height: 16.305rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-producto-comprar {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    height: 5rem;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cont-producto-comprar h2 {
+    width: 8rem;
+    text-align: center;
+}
+.cont-producto-comprar-img {
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-producto-comprar h3 {
+    width: 20rem;
+    text-align: center;
+}
+
+.cont-producto-comprar-img img {
+    max-height: 5rem;
+    max-width: 5rem;
+}
+
+.cont-producto-comprar button {
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.cont-producto-comprar button:hover {
+    color: white;
+    background-color: black;
+}
+
+.cont-comprar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.cont-comprar h3 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cont-comprar button {
+    height: 3rem;
+    width: 5rem;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: white;
+}
+
+.cont-comprar button:hover {
+    color: white;
+    background-color: black;
+}
+
+.cont-descuentos {
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cont-descuentos h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.cont-descuentos button {
+    cursor: pointer;
+    height: 2.5rem;
+    width: 6rem;
+}
+
+@media (max-width: 1280px) {
+    .pagina-carrito {
+        padding-top: 11rem;
+    }
+
+    .cont-productos-comprar {
+        height: 9rem;
+    }
+    
+    .cont-producto-comprar {
+        height: 3rem;
+    }
+    .cont-producto-comprar-img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    
+    .cont-producto-comprar-img img {
+        max-height: 2.5rem;
+        max-width: 2.5rem;
+    }
+    .cont-producto-comprar h2{
+        font-size: 0.9em;
+    }
+    .cont-producto-comprar h3 {
+        width: 15rem;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .cont-producto-comprar button {
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cont-descuentos {
+        width: 100%;
+    }
+
+    .cont-comprar {
+        margin-top: 1rem;
+    }
+
+    .cont-comprar, .cont-comprar h3 {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,143 @@
+.pagina-perfil {
+    padding-top: 3rem;
+    width: 100%;
+    align-content: center;
+}
+
+.pagina-perfil h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.cont-acciones, .cont-perfil, .cont-actualizar , #form-actualizar{
+    display: flex;
+}
+
+.cont-acciones {
+    width: 10rem;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+.cont-acciones button {
+    height: 3rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.cont-acciones button:hover {
+    color:white;
+    border: 1px solid white;
+    background-color: black;
+}
+
+
+.cont-perfil, .cont-actualizar {
+    height: 30rem;
+    width: 30rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    flex-wrap: wrap;
+}
+
+.cont-perfil {
+    align-content: center;
+    justify-content: center;
+}
+
+.cont-perfil p {
+    margin: 0;
+    height: 2rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+
+}
+
+#form-actualizar {
+    height: 90%;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-actualizar label{
+    width: 100%;
+    text-align: center;
+}
+
+#form-actualizar input {
+    margin-top: 1rem;
+    padding-left: 0.6rem;
+    width: 15rem;
+}
+
+#form-actualizar .cont-error {
+    height: 1rem;
+    margin-bottom: 2rem;
+}
+
+#form-actualizar button {
+    height: 2.5rem;
+    width: 5rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+#form-actualizar button:hover {
+    color: white;
+    background-color: black;
+}
+
+.cont-acciones-actualizar {
+    margin: 0 auto;
+    height: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cont-boton-opcion {
+    height: 1.3rem;
+}
+
+.cont-boton-opcion button {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.morado {
+    height: 0.3rem;
+    background-color: rgb(99, 94, 246);
+}
+
+@media (max-width: 1280px) {
+    .pagina-perfil {
+        padding-top: 10rem;
+    }
+
+}
+@media (max-width: 1000px) {
+    .pagina-perfil {
+        padding-top: 10rem;
+    }
+
+    .cont-acciones {
+        width: 25%;
+    }
+
+    .cont-perfil, .cont-actualizar {
+        width: 70%;
+    }
+    
+    #form-actualizar input {
+        margin-top: 1rem;
+        width: 12rem;
+}
+    
+}

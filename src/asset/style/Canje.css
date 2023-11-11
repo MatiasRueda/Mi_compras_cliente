@@ -1,0 +1,58 @@
+.pagina-canjes {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-canjes {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cont-canje {
+    height: 12rem;
+    width: 20rem;
+    border: 0.2rem solid;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-canje h5 , .cont-canje p{
+    text-align: center;
+    width: 100%;
+}
+
+.cont-canje button {
+    height: 3rem;
+    width: 6rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+}
+
+@media (max-width: 1280px) {
+
+    .pagina-canjes {
+        padding-top: 10rem;
+    }
+
+    .pagina-canjes h3 {
+        text-align: center;
+    }
+
+    .cont-canjes {
+        width: 100%;
+    }
+    
+
+    .cont-canje {
+        height: 12rem;
+        width: 15rem;
+    }
+
+}

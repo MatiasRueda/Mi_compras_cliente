@@ -1,0 +1,65 @@
+.sugerencia, .ayuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sugerencia h5, .ayuda h5 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sugerencia button, .ayuda button {
+    margin-top: 1.1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.sugerencia button:hover, .ayuda button:hover {
+    color: white;
+    background-color: black;
+}
+
+.redes {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes h4, .redes p{
+    margin: 0;
+    padding: 0;
+}
+
+.redes p {
+    cursor: pointer;
+}
+
+
+@media (max-width: 1280px) {
+    .sugerencia h5, .ayuda h5 {
+        height: 1.1rem;
+        font-size: 0.8em;
+    }
+    .redes h4, .redes p{
+        font-size: 0.8em;
+    }
+
+    .sugerencia, .ayuda {
+        width: 50%;
+    }
+    .redes {
+        height: 6rem;
+        width: 100%;
+
+    }
+
+    .ayuda, .sugerencia {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

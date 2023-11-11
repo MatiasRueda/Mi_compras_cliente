@@ -1,0 +1,140 @@
+header a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.cont-navs {
+    width: 30%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cont-nav {
+    height: 1.5rem;
+}
+
+.underline {
+    height: 0.3rem;
+    background-color: rgb(34, 27, 245);
+}
+
+.cont-titulo {
+    height: 3rem;
+    width: 8%;
+    border: 2px solid black;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-busqueda {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#busqueda {
+    order: 0;
+    padding-left: 1rem;
+    height: 1.3rem;
+    width: 90%;
+    border-radius: 0.6rem;
+}
+#form-busqueda .cont-error {
+    height: 0.1rem;
+    margin-top: -0.3rem;
+    order: 2;
+}
+
+#form-busqueda .cont-error p {
+    margin: 0;
+    padding: 0;
+}
+
+
+#form-busqueda button {
+    order: 1;
+    width: 4rem;
+    height: 2.3rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+#form-busqueda button:hover {
+    color: white;
+    background-color: black;
+}
+
+.boton-compras {
+    height: 3rem;
+    width: 3.5rem;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-compras:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 1280px) {
+    
+    .cont-navs {
+        order: 3;
+        min-height: 3rem;
+        width: 100%;
+    }
+
+    .cont-titulo {
+        order: 0;
+        width: 70%;
+    }
+
+    .boton-compras{
+        height: 2.5rem;
+        width: 3.5rem;
+    }
+
+    .cont-boton-compras {
+        width: 20%;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #form-busqueda {
+        order: 2;
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #form-busqueda .cont-error {
+        width: 100%;
+        margin: -2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #busqueda {
+        padding-left: 1rem;
+        height: 1.2rem;
+        width: 70%;
+    }
+}
