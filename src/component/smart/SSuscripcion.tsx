@@ -6,7 +6,6 @@ import { MENSAJE_ERROR } from '../../auxiliar/mensajes';
 import { PATH_CLIENT, SERVER_PATH_ACTUALIZAR, SERVER_PATH_SUSCRIPCIONES } from '../../auxiliar/path';
 import { useInformacionContext } from './SInformacion';
 import SCarga from './SCarga';
-import DPagina from '../dumb/DPagina';
 import DSuscripcion from '../dumb/DSuscripcion';
 import { RespuestaServer, Suscripcion, Usuario } from '../../auxiliar/type';
 import ASeccion from '../animation/ASeccion';

@@ -2,7 +2,6 @@ import { Link, Location, To, useLocation } from "react-router-dom";
 import { useInformacionContext } from "./SInformacion";
 import DOpcion from "../dumb/DOpcion";
 
-
 function SNavs(): JSX.Element {
     const path: Location = useLocation();
     const { usuario } = useInformacionContext();

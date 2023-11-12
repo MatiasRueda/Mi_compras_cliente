@@ -1,7 +1,6 @@
 import useObtenerInformacion from "../../hook/useObtenerInformacion";
 import SCarga from "../smart/SCarga";
 import DNovedad from "../dumb/DNovedad";
-import DPagina from "../dumb/DPagina";
 import { SERVER_PATH_NOVEDADES } from "../../auxiliar/path";
 import { Novedad, RespuestaServer } from "../../auxiliar/type";
 import ASeccion from "../animation/ASeccion";

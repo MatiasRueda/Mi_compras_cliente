@@ -4,11 +4,9 @@ import { Producto } from "../../auxiliar/type";
 import { useInformacionContext } from "./SInformacion";
 import SCarga from "./SCarga";
 import DProducto from "../dumb/DProducto";
-import DPagina from "../dumb/DPagina";
 import DNumeroPagina from "../dumb/DNumeroPagina";
 import { PATH_CLIENT } from "../../auxiliar/path";
 import AProducto from "../animation/AProducto";
-import ASeccion from "../animation/ASeccion";
 import AFade from "../animation/AFade";
 
 
