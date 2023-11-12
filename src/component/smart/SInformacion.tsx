@@ -13,7 +13,7 @@ export function useInformacionContext(): Informacion {
 function SInformacion(props: { children: ReactNode }): JSX.Element { 
     const [ usuario, setUsuario ] = useState<Usuario | undefined>(undefined);
     const [ carritoProductos, setCarritoProductos ] = useState<Map<number, ProductoCarrito>>(new Map()); 
-    const { data } = useObtenerInformacion<Data>( TODOS_PRODUCTOS , true, {suspense : true});
+    const { data } = useObtenerInformacion<Data>(TODOS_PRODUCTOS , true, {suspense : true});
     const [ ofertas , setOfertas ] = useState<Oferta[]>(encontrarOfertas(data!.products));
 
     const agregarProducto = (producto: ProductoCarrito): void => {

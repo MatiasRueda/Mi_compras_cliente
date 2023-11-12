@@ -6,7 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { useInformacionContext } from "../../component/smart/SInformacion";
 import { carritoProductos1Test, usuario1Test } from "../aulixiliar/ejemplos";
 
-jest.mock("../../component/smart/SInfoProvider");
+jest.mock("../../auxiliar/path", () => ({ TODOS_PRODUCTOS: '' , PRODUCTO_ESPECIFICO: '', SERVER: ''}))
+jest.mock("../../component/smart/SInformacion");
 
 describe("- Test Compras -", () => {
 

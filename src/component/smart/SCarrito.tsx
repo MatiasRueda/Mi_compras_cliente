@@ -45,7 +45,7 @@ function SCarrito(): JSX.Element {
             ...usuario,
             puntos: usuario.puntos + (Math.floor(total)),
             canjeRestantes: nuevosCanjesRestantes,
-            canjeTitulo: !nuevosCanjesRestantes? "ninguno" : usuario.canjeTitulo,
+            canjeTitulo: !nuevosCanjesRestantes? "Ninguno" : usuario.canjeTitulo,
             canjeDescuento: 0, 
             suscripcionRestantes: nuevosSuscripRestantes,
             suscripcionDescuento: !nuevosSuscripRestantes? 0 : usuario.suscripcionDescuento,

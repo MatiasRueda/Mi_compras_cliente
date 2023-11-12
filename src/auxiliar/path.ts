@@ -29,10 +29,10 @@ export enum PATH_CLIENT {
 
 
 
-export const TODOS_PRODUCTOS: string = "https://dummyjson.com/products?skip=0&limit=100";
-export const PRODUCTO_ESPECIFICO: string = "https://dummyjson.com/products/";
+export const TODOS_PRODUCTOS: string = import.meta.env.VITE_PRODUCTOS!;
+export const PRODUCTO_ESPECIFICO: string = import.meta.env.VITE_PRODUCTO!;
 
-const SERVER: string = import.meta.env.VITE_SERVER!;
+export const SERVER: string = import.meta.env.VITE_SERVER!;
 
 export const SERVER_PATH_INGRESAR = SERVER + PATH.INGRESAR;
 export const SERVER_PATH_REGISTRARSE = SERVER + PATH.REGISTRAR;

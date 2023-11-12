@@ -14,7 +14,6 @@ enum SUB_SECCION {
     CONTRASENIA = "contrasenia"
 }
 
-
 function SActulizarInfoUsuario(): JSX.Element {
     const navigate = useNavigate();
     const { usuario , agregarInfoUsuario } = useInformacionContext();

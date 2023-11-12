@@ -8,7 +8,9 @@ import { oferta1Test, oferta2Test } from "../aulixiliar/ejemplos";
 
 const maximoMiliSegundosEspera = 50000;
 const maximoMiliSegundosParaDesmontar = 2000;
-jest.mock("../../component/smart/SInfoProvider");
+
+jest.mock("../../auxiliar/path", () => ({ TODOS_PRODUCTOS: '' , PRODUCTO_ESPECIFICO: '', SERVER: ''}))
+jest.mock("../../component/smart/SInformacion");
 jest.setTimeout(maximoMiliSegundosEspera);
 
 describe("- Test Ofertas.test -", () => {
