@@ -1,10 +1,8 @@
-import ASeccion from "../animation/ASeccion";
-
-function DPagina(props: { clase: string , lista?: JSX.Element[] , llave?: number | string}): JSX.Element {
+function DPagina(props: { clase: string , lista?: JSX.Element[]}): JSX.Element {
     return (
-        <ASeccion key={props.llave} clase={props.clase}>
+        <section className={props.clase}>
             {props.lista}
-        </ASeccion>
+        </section>
     )
 }
 

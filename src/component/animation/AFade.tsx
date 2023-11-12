@@ -1,13 +1,20 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, Key, ReactNode } from "react";
 import { motion } from "framer-motion";
 
-function AFade(props: { children: ReactNode, clase: string , estilo?: CSSProperties }): JSX.Element {
+function AFade(props: { children: ReactNode , llave?: Key }): JSX.Element {
+    const estilo: CSSProperties = {
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+
     return (
         <motion.div 
+            key={props.llave}
             initial={{opacity: 0}}
-            style={props.estilo}
+            style={estilo}
             animate={{opacity: 1}}
-            className={props.clase}
             transition={{duration: 1}}>
                 {props.children}
         </motion.div>

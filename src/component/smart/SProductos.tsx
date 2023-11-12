@@ -7,6 +7,9 @@ import DProducto from "../dumb/DProducto";
 import DPagina from "../dumb/DPagina";
 import DNumeroPagina from "../dumb/DNumeroPagina";
 import { PATH_CLIENT } from "../../auxiliar/path";
+import AProducto from "../animation/AProducto";
+import ASeccion from "../animation/ASeccion";
+import AFade from "../animation/AFade";
 
 
 function SProductos(props:{caracteristica?: string}): JSX.Element {
@@ -19,9 +22,10 @@ function SProductos(props:{caracteristica?: string}): JSX.Element {
             producto.title.toLowerCase() == props.caracteristica.toLowerCase());
 
     const productosCreados: JSX.Element[] = productosFiltrados.map((producto: Producto) =>
-        <DProducto  key={producto.title} 
-                    infoProducto={producto} 
-                    masDetalles={() => navigate("/" + PATH_CLIENT.PRODUCTO +"/"+ producto.id.toString())}/>);
+        <AProducto key={producto.title} click={() => navigate("/" + PATH_CLIENT.PRODUCTO +"/"+ producto.id.toString())}>
+            <DProducto infoProducto={producto} 
+                       masDetalles={() => navigate("/" + PATH_CLIENT.PRODUCTO +"/"+ producto.id.toString())}/>
+        </AProducto>);
 
     const cantidadDesplzamiento: number = productosCreados.length < 20? productosCreados.length : 20;
     const limite: number = productosCreados.length;
@@ -44,11 +48,13 @@ function SProductos(props:{caracteristica?: string}): JSX.Element {
                 <h2>No hay productos</h2> :
                 <Fragment>
                     <h2 className="cont-subtitulo">Productos: </h2>
-                    <DPagina clase="cont-productos" 
-                             llave={!props.caracteristica? nroPagina : props.caracteristica} 
-                             lista={productosCreados.length >= limite? 
-                                        productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
-                                        productosCreados}/>
+                    <AFade llave={offSet}>
+                        <section className="cont-productos">
+                            {productosCreados.length >= limite? 
+                                    productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
+                                    productosCreados}
+                        </section>
+                    </AFade>
                     <DNumeroPagina nroPagina={nroPagina}
                                    siguiente={(cantidadDesplzamiento * nroPagina) !== limite && 
                                                 <button onClick={() => {manipularOffset("siguiente")}}>

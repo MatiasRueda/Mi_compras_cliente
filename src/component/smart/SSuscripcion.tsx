@@ -9,6 +9,7 @@ import SCarga from './SCarga';
 import DPagina from '../dumb/DPagina';
 import DSuscripcion from '../dumb/DSuscripcion';
 import { RespuestaServer, Suscripcion, Usuario } from '../../auxiliar/type';
+import ASeccion from '../animation/ASeccion';
 
 type SuscripcionElement = {
     titulo: string;
@@ -60,9 +61,12 @@ function Suscripciones(): JSX.Element {
 
     return (
         <SCarga mostrarCarga={isLoading || isValidating}>
-            <DPagina clase='cont-suscripciones' 
-                lista={data?.dato!.map(crearSuscripcionElement).map((suscripcion) => 
-                    <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}/>
+            <ASeccion>
+                <section className='cont-suscripciones'>
+                    {data?.dato!.map(crearSuscripcionElement).map((suscripcion) => 
+                            <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}
+                </section>
+            </ASeccion>
         </SCarga>
     )
 }

@@ -108,6 +108,11 @@
 }
 
 
+.cont-controlador-cantidad button:hover{
+    color: white;
+    background-color: black;
+}
+
 
 
 @media (max-width: 1280px) {
