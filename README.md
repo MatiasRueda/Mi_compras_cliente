@@ -5,7 +5,7 @@
 Proyecto personal para aplicar mis conocimientos en React Typescript, patrón en componentes ( Smart y Dumb components ) y Jest. Además de utilizar nuevas dependencias ( framer-motion, entre otras... ). La pagina ofrece al cliente la posibilidad de comprar los distintos productos ( algunos en oferta ), se puede crear un usuario y se puede modificar, canjear a través de puntos ( que se consiguen con las compras ) y además también poder suscribirse. 
 
 ## Tipo de proyecto
-Proyecto individual
+Proyecto individual.
 
 ## Tecnologías utilizadas
   - React 
