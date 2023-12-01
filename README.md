@@ -157,7 +157,7 @@ Abrir la terminal en la carpeta donde se clono ( o se extrajo ) y escribir el si
 npm i
 ```
 Esto instalara las dependencias que el proyecto necesita
-Ahora para que empiece a funcionar correctamente el proyecto es necesario tener una conexión a un server y aplicar el siguiente comando:
+Para poder utilizar el proyecto es necesario tener una conexión a un server , que a su vez tenga conexión a una base de datos y aplicar el siguiente comando:
 ```
 npm run dev
 ```
