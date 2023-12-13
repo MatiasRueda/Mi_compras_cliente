@@ -8,7 +8,8 @@ Proyecto personal para aplicar mis conocimientos en React Typescript, patrón en
 Proyecto individual.
 
 ## Tecnologías utilizadas
-  - React 
+  - React
+  - CSS
   - Typescript
   - Jest
 
