@@ -151,13 +151,15 @@ Mi_compras_cliente
 Es necesario instalar nodeJS, para eso es necesario ir a la siguiente pagina y descargarlo:
 https://nodejs.org/en
 
-## Uso
 Una vez clonado el repositorio o descargado el zip ( y después de extraerlo ). 
 Abrir la terminal en la carpeta donde se clono ( o se extrajo ) y escribir el siguiente comando.
 ```
 npm i
 ```
 Esto instalara las dependencias que el proyecto necesita
+
+
+## Uso
 Para poder utilizar el proyecto es necesario tener una conexión a un server , que a su vez tenga conexión a una base de datos y aplicar el siguiente comando:
 ```
 npm run dev
