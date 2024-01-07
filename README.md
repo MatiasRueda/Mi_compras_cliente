@@ -172,5 +172,7 @@ npm run test
 ```
 En caso de saltarse los paso de instalación y querer probar el proyecto en linea visitar el siguiente link: https://sprightly-bienenstitch-598a97.netlify.app
 
+</br>
+
 > [!NOTE]
 > Tanto el servidor como la base de datos pueden ser lentas. Porfavor tenga paciencia.
