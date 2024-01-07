@@ -148,27 +148,26 @@ Mi_compras_cliente
 ```
 
 ## Instalación 
-Es necesario instalar nodeJS, para eso es necesario ir a la siguiente pagina y descargarlo:
-https://nodejs.org/en
-
-Una vez clonado el repositorio o descargado el zip ( y después de extraerlo ). 
-Abrir la terminal en la carpeta donde se clono ( o se extrajo ) y escribir el siguiente comando.
+Antes de descargar o clonar el repositorio es necesario que usted instale Node (https://nodejs.org/en).
+Una vez descargado o clanado el repositorio, abra la terminal en la ruta donde se encuentra el proyecto y escriba el siguiente comando.
 ```
 npm i
 ```
-Esto instalara las dependencias que el proyecto necesita
+Esto instalara las dependencias que necesite el proyecto
 
 
 ## Uso
-Para poder utilizar el proyecto es necesario tener una conexión a un server , que a su vez tenga conexión a una base de datos y aplicar el siguiente comando:
+En caso de haber seguido los pasos de la instalación solo debe ejecutar el siguiente comando:
 ```
 npm run dev
 ```
+y dirigirse a la dirección que se muestra en consola
+
 Para poder correr los test escriba el siguiente comando:
 ```
 npm run test
 ```
-En caso de querer ver la pagina con server incluido y poder comprar: https://sprightly-bienenstitch-598a97.netlify.app
+En caso de saltarse los paso de instalación y querer probar el proyecto en linea visitar el siguiente link: https://sprightly-bienenstitch-598a97.netlify.app
 
 > [!NOTE]
 > Tanto el servidor como la base de datos pueden ser lentas. Porfavor tenga paciencia.
