@@ -13,6 +13,10 @@ Proyecto individual.
   - Typescript
   - Jest
 
+## Capturas de pantalla
+<img src="https://i.postimg.cc/Qd2dxFWb/Memotest1.png"/>
+<img src="https://i.postimg.cc/4NvDhnMP/Memotest2.png"/>
+
 ## Estructura 
 
 ```
