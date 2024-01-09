@@ -2,10 +2,26 @@
 ![Static Badge](https://img.shields.io/badge/Estado%20-%20Terminado%20-%20green)
 
 ## Introducción
-Proyecto personal para aplicar mis conocimientos en React Typescript, patrón en componentes ( Smart y Dumb components ) y Jest. Además de utilizar nuevas dependencias ( framer-motion, entre otras... ). La pagina ofrece al cliente la posibilidad de comprar los distintos productos ( algunos en oferta ), se puede crear un usuario y se puede modificar, canjear a través de puntos ( que se consiguen con las compras ) y además también poder suscribirse. 
+Proyecto personal para aplicar mis conocimientos en React Typescript. </br>
+La pagina ofrece al cliente la posibilidad de comprar los distintos productos ( algunos en oferta ), se puede crear un usuario y se puede modificar, canjear a través de puntos ( que se consiguen con las compras ) y además también poder suscribirse. 
 
 ## Tipo de proyecto
 Proyecto individual.
+
+## Capturas de pantalla
+<img src="https://i.postimg.cc/zfN3FLXf/Mi-Compras.png"/>
+
+## Estrategias
+### Smart y Dumb Component
+Se separaron los componentes que se utilizan en el proyecto en smart  y dumb component según la responsabilidad que tengan. Esto lo hice con el objetivo de obtener un código mas conciso y una mejor legibilidad </br> 
+Smart:  Tendrán la lógica del componente, operaciones complejas , gestionan eventos y acciones del usuario.</br>
+Dumb: No manejan la lógica, se encargan únicamente de la presentación.
+
+### Carpeta Auxiliar
+En esta carpeta guardo distintos types o variables constantes que usare a lo largo de todo el proyecto, de esta forma evito repetir código y con las variable contantes definidas evito tener cadenas mágicas 
+
+### Test
+Realizo varios test automaticos sobre distintos componentes. Estos test los hice con el fin de poder realizar cambios sobre estos componentes (refactorizarlos) y luego asegurarme que todos los componentes funcionen de la misma forma.
 
 ## Tecnologías utilizadas
   - React
@@ -13,8 +29,7 @@ Proyecto individual.
   - Typescript
   - Jest
 
-## Capturas de pantalla
-<img src="https://i.postimg.cc/zfN3FLXf/Mi-Compras.png"/>
+
 
 ## Estructura 
 
@@ -151,8 +166,8 @@ Mi_compras_cliente
 ```
 
 ## Instalación 
-Antes de descargar o clonar el repositorio es necesario que usted instale Node (https://nodejs.org/en).
-Una vez descargado o clanado el repositorio, abra la terminal en la ruta donde se encuentra el proyecto y escriba el siguiente comando.
+Antes de descargar o clonar el repositorio es necesario que usted instale Node (https://nodejs.org/en). </br>
+Una vez descargado o clonado el repositorio, abra la terminal en la ruta donde se encuentra el proyecto y escriba el siguiente comando.
 ```
 npm i
 ```
