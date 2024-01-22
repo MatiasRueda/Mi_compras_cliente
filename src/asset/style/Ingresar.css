@@ -60,6 +60,13 @@
     }
 }
 
+@media (width: 1024px) {
+    .pagina-ingresar{
+        padding-top: 12rem;
+    }
+}
+
+
 @media (max-width: 280px) {
     .pagina-ingresar {
         padding-top: 11rem;

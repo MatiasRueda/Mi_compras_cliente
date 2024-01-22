@@ -8,7 +8,8 @@ import { useInformacionContext } from './SInformacion';
 import SCarga from './SCarga';
 import DSuscripcion from '../dumb/DSuscripcion';
 import { RespuestaServer, Suscripcion, Usuario } from '../../auxiliar/type';
-import ASeccion from '../animation/ASeccion';
+import { motion } from 'framer-motion';
+import { CambiarPantalla } from '../../auxiliar/animacion';
 
 type SuscripcionElement = {
     titulo: string;
@@ -60,12 +61,10 @@ function Suscripciones(): JSX.Element {
 
     return (
         <SCarga mostrarCarga={isLoading || isValidating}>
-            <ASeccion>
-                <section className='cont-suscripciones'>
-                    {data?.dato!.map(crearSuscripcionElement).map((suscripcion) => 
-                            <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}
-                </section>
-            </ASeccion>
+            <motion.section className='cont-suscripciones' {...CambiarPantalla}>
+                {data?.dato!.map(crearSuscripcionElement).map((suscripcion) => 
+                    <DSuscripcion key={suscripcion.titulo} {...suscripcion}/>)}
+            </motion.section>
         </SCarga>
     )
 }

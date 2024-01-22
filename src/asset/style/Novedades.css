@@ -24,6 +24,14 @@
     }
 }
 
+@media (width: 1024px) {
+    .pagina-nodevades{
+        padding-top: 12rem;
+    }
+}
+
+
+
 @media (max-width: 280px){
 
     .pagina-nodevades {
@@ -32,5 +40,11 @@
     
     .cont-novedad {
         width: 100%;
+    }
+}
+
+@media (width: 375px) {
+    .pagina-nodevades {
+        padding-top: 12rem;
     }
 }

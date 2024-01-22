@@ -7,7 +7,8 @@ import DProducto from "../dumb/DProducto";
 import DNumeroPagina from "../dumb/DNumeroPagina";
 import { PATH_CLIENT } from "../../auxiliar/path";
 import AProducto from "../animation/AProducto";
-import AFade from "../animation/AFade";
+import { motion } from "framer-motion";
+import { Fade } from "../../auxiliar/animacion";
 
 
 function SProductos(props:{caracteristica?: string}): JSX.Element {
@@ -46,13 +47,14 @@ function SProductos(props:{caracteristica?: string}): JSX.Element {
                 <h2>No hay productos</h2> :
                 <Fragment>
                     <h2 className="cont-subtitulo">Productos: </h2>
-                    <AFade llave={offSet}>
-                        <section className="cont-productos">
-                            {productosCreados.length >= limite? 
-                                    productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
-                                    productosCreados}
-                        </section>
-                    </AFade>
+                    <motion.section
+                            key={offSet} 
+                            className="cont-productos"
+                            {...Fade}>
+                                {productosCreados.length >= limite? 
+                                        productosCreados.slice(offSet, offSet + cantidadDesplzamiento) : 
+                                        productosCreados}
+                    </motion.section>
                     <DNumeroPagina nroPagina={nroPagina}
                                    siguiente={(cantidadDesplzamiento * nroPagina) !== limite && 
                                                 <button onClick={() => {manipularOffset("siguiente")}}>

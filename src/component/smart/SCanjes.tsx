@@ -10,7 +10,8 @@ import DCanje from "../dumb/DCanje";
 import { SERVER_PATH_ACTUALIZAR, SERVER_PATH_CANJES } from "../../auxiliar/path";
 import SVerificar from "./SVerificar";
 import { Canje, RespuestaServer, Usuario } from "../../auxiliar/type";
-import AFade from "../animation/AFade";
+import { motion } from "framer-motion";
+import { Fade } from "../../auxiliar/animacion";
 
 
 interface CanjeElement extends Canje {
@@ -62,12 +63,11 @@ function SCanjes(): JSX.Element {
     return (
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
             <SCarga mostrarCarga={ isLoading || isValidating }>
-                <AFade>
-                    <div className= "cont-canjes">
-                        {data?.dato!.map(crearCanje).map((canje) => 
-                            <DCanje key={canje.titulo} {...canje}/>)}
-                    </div>
-                </AFade>
+                <motion.div className= "cont-canjes" {...Fade}>
+                     {data?.dato!.map(crearCanje).map((canje) => 
+                        <DCanje key={canje.titulo} {...canje}/>)}
+                </motion.div>
+                
             </SCarga>
         </SVerificar>  
     )

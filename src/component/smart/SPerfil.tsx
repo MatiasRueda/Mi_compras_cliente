@@ -38,9 +38,9 @@ function SPerfil(): JSX.Element {
         <SVerificar necesario={!!usuario} msjError={MENSAJE_ERROR.NO_INGRESADO}>
             <div className="cont-acciones">
                 <button key={"informacion"} style={info? elegido : undefined} 
-                        children={"Informacion"} onClick={ingresarAInfo}/>,
+                        children={"Informacion"} onClick={ingresarAInfo}/>
                 <button key={"actualizar"} style={actualizar? elegido : undefined} 
-                        children={"Actualizar"} onClick={ingresarAActualizar}/>,
+                        children={"Actualizar"} onClick={ingresarAActualizar}/>
                 <button key={"cerrarSesion"} children={"Cerrar Sesion"} 
                         onClick={cerrarSesion}/>
             </div>

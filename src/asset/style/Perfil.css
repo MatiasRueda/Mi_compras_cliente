@@ -124,7 +124,7 @@
 }
 @media (max-width: 1000px) {
     .pagina-perfil {
-        padding-top: 10rem;
+        padding-top: 12rem;
     }
 
     .cont-acciones {
@@ -140,4 +140,17 @@
         width: 12rem;
 }
     
+}
+
+
+@media (width: 1280px) {
+    .pagina-perfil {
+        padding-top: 14rem;
+    }
+}
+
+@media (width: 1024px) {
+    .pagina-perfil {
+        padding-top: 14rem;
+    }
 }

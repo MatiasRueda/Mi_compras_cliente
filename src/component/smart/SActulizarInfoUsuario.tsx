@@ -41,10 +41,10 @@ function SActulizarInfoUsuario(): JSX.Element {
                         elegido={elegido}>
                 <button key={SUB_SECCION.NOMBRE} 
                         children={SUB_SECCION.NOMBRE} 
-                        onClick={() => {aplicarAccion(SUB_SECCION.NOMBRE)}}/>,
+                        onClick={() => {aplicarAccion(SUB_SECCION.NOMBRE)}}/>
                 <button key={SUB_SECCION.EMAIL} 
                         children={SUB_SECCION.EMAIL} 
-                        onClick={() => {aplicarAccion(SUB_SECCION.EMAIL)}}/>,
+                        onClick={() => {aplicarAccion(SUB_SECCION.EMAIL)}}/>
                 <button key={SUB_SECCION.CONTRASENIA} 
                         children={SUB_SECCION.CONTRASENIA} 
                         onClick={() => {aplicarAccion(SUB_SECCION.CONTRASENIA)}}/>
