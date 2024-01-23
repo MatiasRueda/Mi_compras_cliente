@@ -5,6 +5,20 @@
 Proyecto personal para aplicar mis conocimientos en React Typescript. </br>
 La pagina ofrece al cliente la posibilidad de comprar los distintos productos ( algunos en oferta ), se puede crear un usuario y se puede modificar, canjear a través de puntos ( que se consiguen con las compras ) y además también poder suscribirse. 
 
+
+## Tabla de contenido
+* [Introducción](#Introducción)
+* [Tabla de contenido](#Tabla-de-contenido)
+* [Tipo de proyecto](#Tipo-de-proyecto)
+* [Capturas de pantalla](#Capturas-de-pantalla)
+* [Estrategias](#Estrategias)
+* [Tecnologías utilizadas](#Tecnologías-utilizadas)
+* [Estructura](#Estructura)
+* [Instalación](#Instalación)
+* [Uso](#Uso)
+
+
+
 ## Tipo de proyecto
 Proyecto individual.
 
